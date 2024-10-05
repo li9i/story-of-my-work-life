@@ -1,0 +1,41 @@
+\begin{frame}{Experimental evaluation (Gazebo)}
+
+\definecolor{r}{RGB}{255 0 0}
+\definecolor{g}{RGB}{0 155 0}
+
+\begin{minipage}{\linewidth}
+  \begin{minipage}{0.33\linewidth}
+    \begin{figure}
+      \input{./figures/06/corridor.tex}
+      \vspace{0.15cm}
+      \caption{Map of environment CORRIDOR, $\bm{M}_C$}
+    \end{figure}
+  \end{minipage}
+  \begin{minipage}{0.33\linewidth}
+    \begin{figure}
+      \input{./figures/06/warehouse.tex}
+      \vspace{0.15cm}
+      \caption{Map of environment WAREHOUSE, $\bm{M}_W$}
+    \end{figure}
+  \end{minipage}
+  \begin{minipage}{0.3\linewidth}
+    $N = 100 \times $ $\textcolor{g}{\bm{p}_0} \rightarrow \textcolor{r}{\bm{p}_G}$\\
+
+    lidar:
+
+    $\lambda = 260^\circ$
+
+    $N_s = 640$ rays
+
+    {\footnotesize $W_R \sim \mathcal{N}(0,\sigma_R^2=0.01^2)$ $[$m, m$^2]$} \\
+
+    \texttt{pf}:
+
+    $200 \leq |\mathcal{P}| \leq 500$
+
+  \end{minipage}
+
+\end{minipage}
+
+
+\end{frame}

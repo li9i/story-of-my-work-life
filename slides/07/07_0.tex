@@ -1,0 +1,16 @@
+\begin{frame}{In the meantime ...}
+
+  {\footnotesize
+  Goran Vasiljević, Damjan Miklić, Ivica Draganjac, Zdenko Kovačić, Paolo Lista,
+  ``High-accuracy vehicle localization for autonomous warehousing", \textit{Robotics and Computer-Integrated Manufacturing}
+  }\vspace{1em}
+
+  Idea: given $\hat{\theta} = \theta \Rightarrow$ control the location estimate via Fourier Transform\vspace{1cm}
+
+  Turns out that we can prove via Lyapunov analysis (KTH thesis skill handy) that:
+  \begin{itemize}
+    \item the true position of the sensor can be recovered with arbitrary precision when the physical sensor reports faultless measurements and there is no discrepancy between the environment and its map
+    \item when either is affected by disturbance, the location estimate is bound in a neighbourhood of the true location, whose radius is proportional to the affecting disturbance
+  \end{itemize}
+
+\end{frame}

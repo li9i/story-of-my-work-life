@@ -1,0 +1,209 @@
+\definecolor{ccsm}{RGB}{228,26,28}
+\definecolor{cndt}{RGB}{55,126,184}
+\definecolor{cfgi}{RGB}{255,0,255}
+\definecolor{cfvg}{RGB}{152,78,163}
+\definecolor{cpso}{RGB}{255,127,0}
+\definecolor{cfsm}{RGB}{77,175,74}
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolorfalse
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(5000.00,8000.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,6802){\makebox(0,0)[r]{\strut{}$10^{-2}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,6951){\makebox(0,0)[r]{\strut{}$10^{-1}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,7101){\makebox(0,0)[r]{\strut{}$10^0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,7250){\makebox(0,0)[r]{\strut{}$10^1$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,7399){\makebox(0,0)[r]{\strut{}$10^2$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2587,7519){\makebox(0,0){\strut{}\scriptsize $(\overline{\delta}_{xy}, \overline{\delta}_\theta) = (0.05 \ \text{m}, 2 \ \text{deg})$}}%
+      \put(2270,7800){\makebox(0,0){\strut{}{\color{ccsm}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize PLICP}}
+      \put(3170,7800){\makebox(0,0){\strut{}{\color{cndt}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize NDT}}
+      \put(4140,7800){\makebox(0,0){\strut{}{\color{cfgi}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize FastGICP}}
+      \put(5300,7800){\makebox(0,0){\strut{}{\color{cfvg}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize FastVGICP}}
+      \put(6500,7800){\makebox(0,0){\strut{}{\color{cpso}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize NDT-PSO}}
+      \put(7500,7800){\makebox(0,0){\strut{}{\color{cfsm}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize FSM}}
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,5854){\makebox(0,0)[r]{\strut{}$10^{-2}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,6003){\makebox(0,0)[r]{\strut{}$10^{-1}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,6153){\makebox(0,0)[r]{\strut{}$10^0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,6302){\makebox(0,0)[r]{\strut{}$10^1$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,6451){\makebox(0,0)[r]{\strut{}$10^2$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2587,6571){\makebox(0,0){\strut{}\scriptsize $(\overline{\delta}_{xy}, \overline{\delta}_\theta) = (0.10 \ \text{m}, 4 \ \text{deg})$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4907){\makebox(0,0)[r]{\strut{}$10^{-2}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,5056){\makebox(0,0)[r]{\strut{}$10^{-1}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,5206){\makebox(0,0)[r]{\strut{}$10^0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,5355){\makebox(0,0)[r]{\strut{}$10^1$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,5504){\makebox(0,0)[r]{\strut{}$10^2$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(-52,4705){\rotatebox{90}{\makebox(0,0){\strut{}Distribution of orientation errors [deg]}}}%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2587,5624){\makebox(0,0){\strut{}\scriptsize $(\overline{\delta}_{xy}, \overline{\delta}_\theta) = (0.15 \ \text{m}, 8.6 \ \text{deg})$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3959){\makebox(0,0)[r]{\strut{}$10^{-2}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4108){\makebox(0,0)[r]{\strut{}$10^{-1}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4258){\makebox(0,0)[r]{\strut{}$10^0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4407){\makebox(0,0)[r]{\strut{}$10^1$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4556){\makebox(0,0)[r]{\strut{}$10^2$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2587,4676){\makebox(0,0){\strut{}\scriptsize $(\overline{\delta}_{xy}, \overline{\delta}_\theta) = (0.20 \ \text{m}, 17.2 \ \text{deg})$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3011){\makebox(0,0)[r]{\strut{}$10^{-2}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3161){\makebox(0,0)[r]{\strut{}$10^{-1}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3310){\makebox(0,0)[r]{\strut{}$10^0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3460){\makebox(0,0)[r]{\strut{}$10^1$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3609){\makebox(0,0)[r]{\strut{}$10^2$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2587,3729){\makebox(0,0){\strut{}\scriptsize $(\overline{\delta}_{xy}, \overline{\delta}_\theta) = (0.20 \ \text{m}, 32 \ \text{deg})$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2064){\makebox(0,0)[r]{\strut{}$10^{-2}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2213){\makebox(0,0)[r]{\strut{}$10^{-1}$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2363){\makebox(0,0)[r]{\strut{}$10^0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2512){\makebox(0,0)[r]{\strut{}$10^1$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2661){\makebox(0,0)[r]{\strut{}$10^2$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1037,1844){\makebox(0,0){\strut{}$0.01$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1812,1844){\makebox(0,0){\strut{}$0.03$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2587,1844){\makebox(0,0){\strut{}$0.05$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3362,1844){\makebox(0,0){\strut{}$0.10$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(4137,1844){\makebox(0,0){\strut{}$0.20$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2587,1514){\makebox(0,0){\strut{}sd of sensor measurement noise $\sigma_R$ [m]}}%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2587,2781){\makebox(0,0){\strut{}\scriptsize $(\overline{\delta}_{xy}, \overline{\delta}_\theta) = (0.20 \ \text{m}, 45 \ \text{deg})$}}%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics{./figures/10/orientation_errors}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup

@@ -1,0 +1,72 @@
+\begin{tikzpicture}
+% draw horizontal line
+\draw[thick, -Triangle] (0,0) -- (12cm,0) node[font=\scriptsize,below left=3pt and -8pt]{};
+
+% draw vertical lines
+\foreach \x in {-1,0,1,...,12}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+\foreach \x/\descr in {-1/$\dots$,0/2013,1/2014,2/2015,3/2016,4/2017,5/2018,6/2019,7/2020,8/2021,9/2022,10/2023,11/2024,11.83/now}
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (\x,-.3) {$\descr$};
+
+% colored bar up
+%\foreach \x/\perccol in
+%{1/100,2/75,3/25,4/0}
+%\draw[lightgray!\perccol!red, line width=4pt]
+%(\x,.5) -- +(1,0);
+%\draw[-Triangle, dashed, red] (5,.5) --  +(1,0);
+
+% colored bar down
+%\foreach \x/\perccol in
+%{3/100,4/75,5/0}
+%\draw[lightgray!\perccol!green, line width=4pt]
+%(\x,-.7) -- +(1,0);
+%\draw[-Triangle, dashed, green] (6,-.7) --  +(1,0);
+
+
+\definecolor{b}{RGB}{32,74,135}
+\definecolor{m}{RGB}{255,0,255}
+\definecolor{g}{RGB}{78,154,0}
+\definecolor{h}{RGB}{220,220,220}
+
+% braces
+\draw [thick,decorate,decoration={brace,amplitude=5pt}, color=b] (7/12,-.5) -- +(-1-7/12,0)
+       node [black,midway,font=\scriptsize, below=4pt] {\textcolor{b}{ECE AUTh ($\sim$$\text{8Y}$)}};
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}, color=b] (10/12,0.2)  -- +(10/12,0)
+       node [b,midway,above=4pt, font=\scriptsize] {\textcolor{b}{PANDORA undergrad robotics team ($\sim$$\text{1Y}$)}};
+\draw [thick,decorate,decoration={brace,amplitude=5pt}, color=b] (4+8/12,-.5) -- +(-2,0)
+       node [b,midway,font=\scriptsize, below=4pt] {\textcolor{b}{KTH (MSc) ($\sim$$\text{2Y}$)}};
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}, color=b] (5+9/12,2.2)  -- +(4+11/12,0)
+       node [b,midway,above=4pt, font=\scriptsize] {\textcolor{b}{AUTh (PhD)}};
+\draw [thick,decorate,decoration={brace,amplitude=5pt}, color=h] (1+1/12+10+9/12,-.5) -- +(-1-2/12,0)
+       node [h,midway,font=\scriptsize, below=4pt] {\textcolor{h}{ITI CERTH($\sim$$\text{1Y}$)}};
+
+% Papers
+% ------------------------------------------------------------------------------
+\path[->,color=m,thick] ($(4+8/12,1.5)$) edge [out=-90, in=90]  ($(4+8/12,0)$);
+\draw[thick,color=m] ($(4+8/12,1.5)$) node [above=0pt,align=center,m] {\footnotesize \textcolor{m}{\texttt{IJC}}};
+% ------------------------------------------------------------------------------
+\path[->,color=m,thick] ($(6+3/12,1.5)$) edge [out=-90, in=90]  ($(6+3/12,0)$);
+\draw[thick,color=m] ($(6+3/12,1.5)$) node [above=0pt,align=center,m] {\footnotesize \textcolor{m}{\texttt{JINT\#1}}};
+% ------------------------------------------------------------------------------
+\path[->,color=m,thick] ($(6+10/12,0.5)$) edge [out=-90, in=90]  ($(6+10/12,0)$);
+\draw[thick,color=m] ($(6+10/12,0.5)$) node [above=0pt,align=center,m] {\footnotesize \hspace{+0.5cm}\textcolor{m}{\texttt{JINT\#2}}};
+% ------------------------------------------------------------------------------
+\path[->,color=m,thick] ($(7+11/12,1.5)$) edge [out=-90, in=90]  ($(7+11/12,0)$);
+\draw[thick,color=m] ($(7+11/12,1.5)$) node [above=0pt,align=center,m] {\footnotesize \textcolor{m}{\texttt{JINT\#3}}};
+% ------------------------------------------------------------------------------
+\path[->,color=g,thick] ($(7,-1.5)$) edge [out=+90, in=-90]  ($(7,0)$);
+\draw[thick,color=g] ($(7,-2)$) node [above=0pt,align=center,g] {\footnotesize \textcolor{g}{\texttt{RAS}}};
+% ------------------------------------------------------------------------------
+\path[->,color=h,thick] ($(9+2/12,0.5)$) edge [out=-90, in=90]  ($(9+2/12,0)$);
+\draw[thick,color=h] ($(9+2/12,0.5)$) node [above=0pt,align=center,h] {\footnotesize \hspace{-0.8cm}\textcolor{h}{\texttt{ARRAY}}};
+% ------------------------------------------------------------------------------
+\path[->,color=h,thick] ($(9+7/12,1.5)$) edge [out=-90, in=90]  ($(9+7/12,0)$);
+\draw[thick,color=h] ($(9+7/12,1.5)$) node [above=0pt,align=center,h] {\footnotesize \textcolor{h}{\texttt{IROS\#1}}};
+% ------------------------------------------------------------------------------
+\path[->,color=h,thick] ($(11+6/12,-0.75)$) edge [out=+90, in=-90]  ($(11+6/12,0)$);
+\draw[thick,color=h] ($(11+6/12,-2)$) node [above=0pt,align=center,h] {\footnotesize \textcolor{h}{\texttt{IROS\#2}}};
+\path[-,color=h,thick] ($(11+6/12,-1.5)$) edge [out=+90, in=-90]  ($(11+6/12,-1.1)$);
+
+\end{tikzpicture}

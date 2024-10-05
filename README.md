@@ -1,1 +1,1 @@
-# story-of-my-work-life
+A chronology of my involvement in robotics and control
